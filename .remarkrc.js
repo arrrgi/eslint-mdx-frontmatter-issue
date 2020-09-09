@@ -1,7 +1,6 @@
 module.exports = {
   plugins: [
     'remark-frontmatter',
-    'remark-preset-prettier',
     'remark-external-links',
     'remark-capitalize',
     'remark-preset-lint-markdown-style-guide',

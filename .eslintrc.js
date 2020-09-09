@@ -23,7 +23,7 @@ module.exports = {
   parserOptions: {
     allowImportExportEverywhere: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react', 'plugin:mdx/recommended'],
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   plugins: ['react-hooks'],
   rules: {
     // Ignore certain webpack alias because it can't be resolved
@@ -39,23 +39,10 @@ module.exports = {
   },
   overrides: [
     {
-      files: '*.md',
+      files: ['*.md', '*.mdx'],
+      extends: 'plugin:mdx/recommended',
       rules: {
-        'prettier/prettier': [
-          ERROR, {
-            parser: 'markdown'
-          }
-        ]
-      }
-    },
-    {
-      files: '*.mdx',
-      rules: {
-        'prettier/prettier': [
-          ERROR, {
-            parser: 'eslint-mdx'
-          }
-        ]
+        'import/prefer-default-export': OFF
       }
     }
   ]
