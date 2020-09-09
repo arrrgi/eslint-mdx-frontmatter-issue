@@ -8,7 +8,7 @@
  */
 
 const OFF = 0;
-const WARNING = 1;
+/* const WARNING = 1; */
 const ERROR = 2;
 
 module.exports = {
@@ -37,4 +37,26 @@ module.exports = {
     'react-hooks/rules-of-hooks': ERROR,
     'react/prop-types': OFF, // PropTypes aren't used much these days.
   },
+  overrides: [
+    {
+      files: '*.md',
+      rules: {
+        'prettier/prettier': [
+          ERROR, {
+            parser: 'markdown'
+          }
+        ]
+      }
+    },
+    {
+      files: '*.mdx',
+      rules: {
+        'prettier/prettier': [
+          ERROR, {
+            parser: 'eslint-mdx'
+          }
+        ]
+      }
+    }
+  ]
 };
